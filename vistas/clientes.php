@@ -94,6 +94,39 @@ if ($_SESSION['Clientes']==1)
             </div>
         </div>
     </div>
+    <div style="text-align: center">
+    <button style="width: 150px; margin-right: 10px; background-color: #d9534f; color: white;", onclick="generarPDF()">Generar PDF</button>
+    <button style="width: 150px; margin-right: 10px; background-color: #337ab7; color: white;", onclick="generarXML()">Generar XML</button>
+    <button style="width: 150px; margin-right: 10px; background-color: #5cb85c; color: white;", onclick="generarExcel()">Generar Excel</button>
+    </div>
+    <script>
+        function generarPDF() {
+            enviarSolicitud('generar_pdf.php');
+        }
+
+        function generarXML() {
+            enviarSolicitud('generar_xml.php');
+        }
+
+        function generarExcel() {
+            enviarSolicitud('generar_excel.php');
+        }
+
+        function enviarSolicitud(url) {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {tabla_html: $('#tbllistado').html()},
+                success: function(response) {
+                    alert('Respuesta del servidor' + response);  
+                },
+                error: function(error) {
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+    </div>
 
     <?php
 }
