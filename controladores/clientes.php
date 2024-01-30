@@ -3,6 +3,7 @@ require_once "../modelos/Clientes.php";
 
 $cliente=new Clientes();
 
+
 $idcliente=isset($_POST["idcliente"])? limpiarCadena($_POST["idcliente"]):"";
 $ruc=isset($_POST["ruc"])? limpiarCadena($_POST["ruc"]):"";
 $razonsocial=isset($_POST["razonsocial"])? limpiarCadena($_POST["razonsocial"]):"";
