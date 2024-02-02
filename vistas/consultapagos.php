@@ -107,6 +107,8 @@ if ($_SESSION['Consultas']==1)
                         <div class="row">
                             <div class="form-group col-xs-12">
                                 <button title="Regresar a consultas" class="btn btn-info btn-block" type="button" id="btnregresar"><i class="far fa-arrow-alt-circle-left"></i> Volver al menú anterior</button>
+				<a class="btn btn-danger float-right"  style="margin-top:30px " target="_blank" href="facturaa.php" role="button">Imprimir Factura</a>
+                                 <!--idpagos php echo $idpagos-->  
                             </div>
                         </div>
                     </form>
