@@ -96,9 +96,10 @@ if ($_SESSION['Clientes']==1)
     </div>
     <div style="text-align: center">
     <a href="fpdf-tutoriales-master/PruebaV.php" download>
-        <button style="width: 150px; margin-right: 10px; background-color: #d9534f; color: white;">Generar PDF</button>
+        <button style="width: 150px; margin-right: 10px; background-color: #d9534f; color: white;" onclick="generarPDF()">Generar PDF</button>
     </a>
     </div>
+
     </div>
 
     <?php
