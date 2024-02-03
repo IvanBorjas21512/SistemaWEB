@@ -24,11 +24,10 @@ $stmtCliente = $pdo->prepare('SELECT idcliente, razonSocial, representante, ruc,
 $stmtCliente->execute();
 $cliente = $stmtCliente->fetch();
 
-// Datos del servicio usando el ID del cliente 
-$stmtServicio = $pdo->prepare('SELECT descripcion, costo, fechaInicio, fechaFinal FROM ordenservicio WHERE idcliente = :idcliente');
-$stmtServicio->execute(['idcliente' => $cliente['idcliente']]);
-$service = $stmtServicio->fetch();
-
+// Datos del servicio
+$stmt = $pdo->prepare('SELECT descripcion,costo, fechaInicio, fechaFinal FROM ordenservicio WHERE idorden = :id');
+$stmt->execute(['id' => 1]); //  del servicio
+$service = $stmt->fetch();
 // Nuevo documento
 $pdf = new FPDF();
 $pdf->SetMargins(17,45,17);
